@@ -7,7 +7,7 @@ import os
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 app = Flask(__name__)
-CORS(app)  # Allow cross-origin requests from any frontend
+CORS(app, supports_credentials=True, resources={r"/*": {"origins": "*"}})
 
 @app.route('/generate', methods=['POST'])
 def generate():
