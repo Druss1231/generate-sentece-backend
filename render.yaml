@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: vocab-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: AIzaSyDHG4H-evU_O8jnI-HqG6E1GF2dTfL_t-U
